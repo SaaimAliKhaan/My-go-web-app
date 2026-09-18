@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-web-app
+  labels:
+    app: go-web-app
+spec:
+  replicas: 1 # number of pods to run...simple application hai to 1 hi rakha hai
+  selector:
+    matchLabels:
+      app: go-web-app
+  template:
+    metadata:
+      labels:
+        app: go-web-app #pod ke andar bhi same label hona chahiye jo selector me hai...mtlb upar metadata me jo labels hai and selector ke labels me same hona chaiye ...bcoz service discovery labels and selectors se hi hoti hai
+    spec:
+      containers:
+      - name: go-web-app
+        image: saaimf5/go-web-app:v1
+        ports:
+        - containerPort: 8080
