@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-web-app
+  labels:
+    app:go-web-app
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: go-web-app #service me selector me bhi same label hona chahiye jo pod (pod directly deploy krre ho ya deployment ke through krre ho doesnot matter)ke andar hai
+  type: ClusterIP
+
