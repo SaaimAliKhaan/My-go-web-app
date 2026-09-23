@@ -41,7 +41,7 @@ jobs:
       - name: Run goglangci-lint #run golangci-lint to check code quality
         uses: golangci/golangci-lint-action@v6  
         with:
-          version: v1.56.2
+          version: v1.64
 
 #ab hogi docker image build and push stage...iske andar hum docker image build karenge aur docker hub pe push karenge
   docker-build-and-push:
